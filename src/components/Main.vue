@@ -12,7 +12,6 @@
 
 <script lang="ts">
 /*eslint @typescript-eslint/camelcase: "off"*/
-import "@/assets/particles.min.js";
 
 export default {
   name: "Main",
@@ -28,10 +27,10 @@ export default {
         {
           particles: {
             number: {
-              value: 80,
+              value: 150,
               density: {
                 enable: true,
-                value_area: 800
+                value_area: 1250
               }
             },
             color: {
@@ -44,7 +43,7 @@ export default {
                 color: "#000000"
               },
               polygon: {
-                nb_sides: 5
+                nb_sides: 6
               },
               image: {
                 src: "img/github.svg",
@@ -56,7 +55,7 @@ export default {
               value: 0.5,
               random: false,
               anim: {
-                enable: false,
+                enable: true,
                 speed: 1,
                 opacity_min: 0.1,
                 sync: false
@@ -74,14 +73,14 @@ export default {
             },
             line_linked: {
               enable: true,
-              distance: 150,
+              distance: 125,
               color: "#ffffff",
               opacity: 0.4,
               width: 1
             },
             move: {
               enable: true,
-              speed: 6,
+              speed: 5,
               direction: "none",
               random: false,
               straight: false,
@@ -99,7 +98,7 @@ export default {
             events: {
               onhover: {
                 enable: true,
-                mode: "repulse"
+                mode: "grab"
               },
               onclick: {
                 enable: true,
@@ -109,7 +108,7 @@ export default {
             },
             modes: {
               grab: {
-                distance: 400,
+                distance: 150,
                 line_linked: {
                   opacity: 1
                 }

@@ -1,57 +1,15 @@
-@import url("https://fonts.googleapis.com/css?family=Raleway:100,100i,400,400i,500,500i,600,600i,700,700i,800,800i,900,900i&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Erica+One&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Damion|Open+Sans&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Alfa+Slab+One&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Playfair+Display&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Nixie+One&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Oswald&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Nunito&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Courier+Prime:400,400i,700,700i|Erica+One|Montserrat:400,500,500i,600,600i,700,700i,900,900i|Oswald:400,500,600,700|Roboto+Mono:400,400i,500,500i,700|Ubuntu+Mono:400,400i,700,700i&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Courier+Prime|Erica+One|Montserrat|Oswald|Roboto+Mono|Ubuntu+Mono&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Abril+Fatface|Bebas+Neue|Patua+One&display=swap");
-@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:900|Limelight&display=swap");
-$main-color1: #5c9fb8;
-$secondary-color1: #ef6c33;
-$body-bkg-color1: #252934;
-$navbar-bkg-color1: #1b242f;
-
-$opa-1: #1a1a1d;
-$opa-2: #4e4e50;
-$dark-pink-color: #6f2232;
-$pink-color: #950740;
-$pink-2-color: #c3073f;
-
-$opb-1: #501f3a;
-$pink-3-color: #cd2d6f;
-$light-pink-color: #c4477b;
-$opb-3: #ccc;
-$opb-4: #14a098;
-$opb-5: #0f292f;
+@import url("https://fonts.googleapis.com/css?family=Alegreya+Sans+SC:400,700,800,900|Bebas+Neue|Titillium+Web:900|Ubuntu+Mono:400,700,700i|Work+Sans:900&display=swap");
 
 $transparent-black: rgba(0, 0, 0, 0.2);
 $white-color: #fff;
 $light-grey-color: #2d2f31;
-$grey-color: #0f0f0f;
-$apple-grey-color: #89c90d;
-$grey2-color: #131313;
-$grey3-color: #050505;
-// $light-grey-color: #252934;
-$light-grey-color2: #dfc2c231;
-// $light-grey-color : #f5f5f5;
-$green-color: #52afab;
 $black-color: #252934;
 $violet: #9625f2;
 $violet2: #bc46e0;
 $main-color: $violet;
-$main2-color: $violet2;
-$secondary-color: $main-color;
-$body-bkg-color: $grey3-color;
-$navbar-bkg-color: $grey2-color;
+$secondary-color: $violet2;
 
-$main-title-color: $main-color;
-//Hex: 0C4A60 / EF6C33 / ABDFF1 / E1DDDB
-$title-font: "Alegreya Sans SC";
-//$title-font: "Nunito";
+$title-font: "Titillium Web", "Alegreya Sans SC";
 $subtitle-font: "Bebas Neue";
 $body-font: "Ubuntu Mono", "Raleway", Avenir, Helvetica, Arial, sans-serif;
 
@@ -67,6 +25,7 @@ $body-font: "Ubuntu Mono", "Raleway", Avenir, Helvetica, Arial, sans-serif;
   .title {
     font-family: $title-font;
     font-size: 3.5rem;
+    text-transform: uppercase;
   }
   .subtitle {
     font-family: $subtitle-font;
@@ -79,8 +38,6 @@ $body-font: "Ubuntu Mono", "Raleway", Avenir, Helvetica, Arial, sans-serif;
   }
   #main {
     height: 100vh;
-    // background: $body-bkg-color;
-
     background: rgba(0, 0, 0, 1);
     background: -moz-linear-gradient(top, rgba(0, 0, 0, 1) 0%, rgba(150, 37, 242, 1) 100%);
     background: -webkit-gradient(
@@ -96,38 +53,31 @@ $body-font: "Ubuntu Mono", "Raleway", Avenir, Helvetica, Arial, sans-serif;
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#000000', endColorstr='#9625f2', GradientType=0 );
 
     display: flex;
+    canvas {
+      position: absolute;
+    }
     .title {
       font-size: 2.5rem;
       color: $white-color;
-      // font-family: "Alfa Slab One";
       font-family: $subtitle-font;
-      // text-transform: uppercase;
-      // font-weight: bolder;
-      // font-family: "Playfair Display";
       .secondary-color {
-        // color: $main-title-color;
       }
       .name {
-        // font-weight: bolder;
-        // font-family: "Playfair Display";
-        //font-family: "Alfa Slab One";
         font-family: $title-font;
-        text-transform: none;
+        text-transform: uppercase;
         font-size: 3.5rem;
-        // font-style: italic;
       }
     }
   }
   #navbar {
     background: $transparent-black;
-    border-bottom: 5px solid $secondary-color !important;
+    border-bottom: 5px solid $main-color !important;
     a {
       color: $white-color;
       text-transform: uppercase;
     }
   }
   #about {
-    // background: $grey-color;
     #skills {
       margin: 50px 0;
       .skill {
@@ -139,17 +89,16 @@ $body-font: "Ubuntu Mono", "Raleway", Avenir, Helvetica, Arial, sans-serif;
           .shape {
             height: 100px;
             width: 100px;
-            // background-color: $main-color;
             border-radius: 50%;
             display: flex;
             align-items: center;
             justify-content: center;
-            border: solid 3px $main2-color;
+            border: solid 3px $secondary-color;
 
             svg {
               height: 3em;
               width: auto;
-              color: $main2-color;
+              color: $secondary-color;
             }
           }
         }
@@ -190,7 +139,7 @@ $body-font: "Ubuntu Mono", "Raleway", Avenir, Helvetica, Arial, sans-serif;
             border-radius: 0;
             font-size: 1rem;
             .progress-bar {
-              background-color: $main2-color;
+              background-color: $secondary-color;
             }
           }
         }
@@ -198,8 +147,6 @@ $body-font: "Ubuntu Mono", "Raleway", Avenir, Helvetica, Arial, sans-serif;
     }
   }
   #portfolio {
-    // background: $light-grey-color;
-    // height: 500px;
     .title-container {
       display: flex;
       flex-direction: column;
@@ -228,7 +175,6 @@ $body-font: "Ubuntu Mono", "Raleway", Avenir, Helvetica, Arial, sans-serif;
       justify-content: center;
       .project {
         transition: all 0.35s ease-in-out;
-        background: $light-grey-color2;
         width: 350px;
         height: 200px;
         display: flex;
@@ -274,11 +220,9 @@ $body-font: "Ubuntu Mono", "Raleway", Avenir, Helvetica, Arial, sans-serif;
     }
   }
   #contact {
-    // background: $black-color;
     color: $white-color;
   }
   #footer {
-    // background: $navbar-bkg-color1;
     background: rgba(0, 0, 0, 0.2);
     color: $white-color;
     .social {
