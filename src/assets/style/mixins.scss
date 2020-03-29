@@ -1,0 +1,102 @@
+@mixin filter-gradient($from, $to, $type) {
+  $gradient-type: 1;
+  $direction-from: top;
+  $init: left top;
+  $end: left bottom;
+  $direction-to: bottom;
+  //   todo> Check if block
+  @if $type == down {
+    $direction-from: top;
+    $direction-to: bottom;
+    $gradient-type: 0;
+    $linear-gradient: linear-gradient(to $direction-to, $from 0%, $to 100%);
+    $init: left top;
+    $end: left bottom;
+  } @else if $type == right {
+    $direction-from: left;
+    $direction-to: right;
+    $linear-gradient: linear-gradient(to $direction-to, $from 0%, $to 100%);
+    $init: left top;
+    $end: right top;
+  } @else if $type == down-right {
+    $direction-from: -45deg;
+    $direction-to: 135deg;
+    $linear-gradient: linear-gradient($direction-to, $from 0%, $to 100%);
+    $init: left top;
+    $end: right bottom;
+  } @else if $type == up-right {
+    $direction-from: 45deg;
+    $direction-to: 45deg;
+    $linear-gradient: linear-gradient($direction-to, $from 0%, $to 100%);
+    $init: left bottom;
+    $end: right top;
+  }
+  background: $from;
+  background: -moz-linear-gradient($direction-from, $from 0%, $to 100%);
+  background: -webkit-gradient($init, $end, color-stop(0%, $from), color-stop(100%, $to));
+  background: -webkit-linear-gradient($direction-from, $from 0%, $to 100%);
+  background: -o-linear-gradient($direction-from, $from 0%, $to 100%);
+  background: -ms-linear-gradient($direction-from, $from 0%, $to 100%);
+  background: linear-gradient(to $direction-to, $from 0%, $to 100%);
+  filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='$from', endColorstr='$to', GradientType='$gradient-type' );
+}
+
+@mixin box($width, $height: $width) {
+  width: $width;
+  height: $height;
+}
+@mixin clearfix {
+  &:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+}
+@mixin opacity($opacity) {
+  opacity: $opacity;
+  $opacity-ie: $opacity * 100;
+  filter: alpha(opacity = $opacity-ie); //IE8
+}
+@mixin screen($size) {
+  $desktop: "(min-width: 1024px)";
+  $tablet: "(min-width: 768px) and (max-width: 1023px)";
+  $mobile: "(max-width: 767px)";
+  @if $size == desktop {
+    @media only screen and #{$desktop} {
+      @content;
+    }
+  } @else if $size == tablet {
+    @media only screen and #{$tablet} {
+      @content;
+    }
+  } @else if $size == mobile {
+    @media only screen and #{$mobile} {
+      @content;
+    }
+  } @else {
+    @media only screen and #{$size} {
+      @content;
+    }
+  }
+}
+@mixin retina($image, $width, $height) {
+  @media (min--moz-device-pixel-ratio: 1.3),
+    (-o-min-device-pixel-ratio: 2.6/2),
+    (-webkit-min-device-pixel-ratio: 1.3),
+    (min-device-pixel-ratio: 1.3),
+    (min-resolution: 1.3dppx) {
+    /* Serving 2x image on Retina display */
+    background-image: url($image);
+    background-size: $width $height;
+  }
+}
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: quote($font-name);
+    src: url($file-name + ".eot");
+    src: url($file-name + ".eot?#iefix") format("embedded-opentype"), url($file-name + ".woff") format("woff"),
+      url($file-name + ".ttf") format("truetype"), url($file-name + ".svg##{$font-name}") format("svg");
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
