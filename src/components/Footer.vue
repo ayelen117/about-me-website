@@ -42,6 +42,16 @@ export default {
           icon: ["fab", "github"]
         },
         {
+          name: "Twitter",
+          link: "https://twitter.com/ayelen_guerra",
+          icon: ["fab", "twitter"]
+        },
+        {
+          name: "Instagram",
+          link: "https://www.instagram.com/ayelen_guerra/",
+          icon: ["fab", "instagram"]
+        },
+        {
           name: "Email",
           link: "mailto:ayelen.guerra117@gmail.com",
           icon: ["fas", "envelope"]
