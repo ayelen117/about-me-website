@@ -1,8 +1,13 @@
 <template>
-  <b-row id="about" class="section">
+  <div id="about" class="row section">
     <div class="container flex">
       <h1 class="title text-uppercase">About me</h1>
+      <div class="row main">
+        <Summary />
+        <Languages />
+      </div>
       <div id="skills" class="row">
+        <!-- todo: check structure -->
         <Skill
           v-for="skill in skills"
           :key="skill.subtitle"
@@ -11,12 +16,8 @@
           :icon="skill.icon"
         />
       </div>
-      <div class="row main">
-        <Summary />
-        <Languages />
-      </div>
     </div>
-  </b-row>
+  </div>
 </template>
 
 <script lang="ts">

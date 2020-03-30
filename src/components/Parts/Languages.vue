@@ -1,5 +1,5 @@
 <template>
-  <div class="col-sm" id="languages">
+  <div class="col-md" id="languages">
     <div v-for="language in languages" :key="language.name" class="language">
       <div class="name">
         <span>{{ language.name }}</span>

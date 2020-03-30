@@ -1,5 +1,5 @@
 <template>
-  <div class="col-sm skill">
+  <div class="col-md skill">
     <div class="shape-wrap">
       <div class="shape">
         <font-awesome-icon :icon="icon" />

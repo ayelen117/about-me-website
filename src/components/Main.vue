@@ -3,8 +3,10 @@
     <div class="col align-self-center">
       <h1 class="title">
         Hi! I am
-        <span class="font-weight-bold secondary-color name">Ayelen Guerra</span
-        >. <br />I'm software engineer
+        <span class="font-weight-bold secondary-color name">
+          <br class="mobile-only-br" />Ayelen Guerra
+        </span>
+        <br />I'm software engineer
       </h1>
     </div>
   </div>

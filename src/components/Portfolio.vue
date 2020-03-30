@@ -3,11 +3,11 @@
     <div class="container flex">
       <h1 class="title text-uppercase">Portfolio</h1>
       <div class="title-container">
-        <div class="filters d-flex justify-content-center">
+        <div class="filters d-flex justify-content-center row">
           <div
             v-bind:key="filter"
             v-for="filter in filters"
-            class="filter"
+            class="filter col"
             v-bind:class="{ active: currentFilter === filter }"
             v-on:click="setFilter(filter)"
           >
@@ -40,6 +40,7 @@
                   >{{ language }}</span
                 >
               </div>
+              <a class="btn" target="_blank" :href="project.url">Enter</a>
             </div>
           </div>
         </div>
@@ -98,7 +99,7 @@ export default {
             "AWS",
             "MongoDB"
           ],
-          url: "https://multinexo.com/"
+          url: "#"
         },
         {
           title: "AARP",
@@ -110,7 +111,7 @@ export default {
           title: "AARP Smart Driver TEK ",
           image: "smart-drivertek.png",
           languages: ["ElectronJS", "Javascript", "HTML5", "CSS"],
-          url: "https://multinexo.com/"
+          url: "#"
         },
         {
           title: "Bitmovil",

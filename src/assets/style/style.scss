@@ -1,6 +1,11 @@
 @import "mixins";
 @import "_variables";
 
+html,
+body {
+  overflow-x: hidden;
+}
+
 #app {
   background: $light-grey-color;
   font-size: 12pt;
@@ -24,6 +29,7 @@
     font-family: $title-font;
     font-size: 3.5rem;
     text-transform: uppercase;
+    margin-bottom: 50px;
   }
   .subtitle {
     font-family: $subtitle-font;
@@ -49,9 +55,16 @@
       .secondary-color {
       }
       .name {
-        font-family: $title-font;
+        // font-family: $title-font;
+        font-weight: bolder;
         text-transform: uppercase;
         font-size: 3.5rem;
+        .mobile-only-br {
+          display: none;
+          @include screen("mobile") {
+            display: block;
+          }
+        }
       }
     }
   }
@@ -59,15 +72,28 @@
     background: $light-grey-color;
     z-index: 1;
     border-bottom: 5px solid $main-color !important;
-    a {
-      color: $white-color;
-      text-transform: uppercase;
+    li {
+      &:hover {
+        a {
+          background: lightgray;
+          color: #000;
+        }
+      }
+
+      a {
+        color: $white-color;
+        text-transform: uppercase;
+      }
     }
   }
   #about {
+    background: $transparent-black;
     #skills {
-      margin: 50px 0;
       .skill {
+        padding: 20px;
+        &:hover {
+          background: $light-grey-color;
+        }
         .shape-wrap {
           display: flex;
           align-items: center;
@@ -80,34 +106,53 @@
             display: flex;
             align-items: center;
             justify-content: center;
-            border: solid 3px $secondary-color;
+            border: solid 3px $intermediate-color;
 
             svg {
               height: 3em;
               width: auto;
-              color: $secondary-color;
+              color: $intermediate-color;
             }
+          }
+        }
+        .text {
+          p {
+            margin: 0;
           }
         }
       }
     }
     .main {
-      margin-top: 20px;
+      margin-bottom: 50px;
+      @include screen("mobile") {
+        margin-bottom: 0px;
+        & > div {
+          margin-bottom: 50px;
+        }
+      }
+
       #summary {
         .image {
           img {
             width: 50%;
             margin-bottom: 20px;
+            @include screen("mobile") {
+              width: 100%;
+            }
           }
         }
         .body {
           margin: 0 15px;
+          a {
+            color: $main-color !important;
+          }
         }
       }
       #languages {
         display: flex;
         flex-direction: column;
         justify-content: space-between;
+        min-height: 400px;
         // animation: slideInRight 0.75s ease both;
         .language {
           display: flex;
@@ -153,6 +198,7 @@
         }
         &:hover {
           background: lightgray;
+          color: $black-color;
         }
       }
     }
@@ -172,11 +218,24 @@
         align-items: center;
         background-repeat: no-repeat;
         background-size: cover;
+        @include screen("mobile") {
+          margin: 5px 0;
+        }
+        @include screen("tablet") {
+          margin: 5px 0;
+        }
+
         &:hover .content {
-          opacity: 1;
+          @include opacity(1);
         }
         .content {
-          opacity: 0;
+          @include screen("mobile") {
+            @include opacity(0.9);
+          }
+          @include screen("tablet") {
+            @include opacity(0.9);
+          }
+          @include opacity(0);
           flex: 1;
           background-color: $main-color;
           width: 100%;
@@ -189,6 +248,19 @@
             .title {
               color: $white-color;
             }
+            a.btn {
+              border: 1px solid $white-color;
+              border-radius: 0px;
+              margin-top: 10px;
+              padding: 5px 10px;
+              text-transform: uppercase;
+              color: $white-color;
+
+              &:hover {
+                background: $white-color;
+                color: $main-color;
+              }
+            }
           }
         }
       }
@@ -196,12 +268,12 @@
 
     .projects-enter {
       transform: scale(0.5) translatey(-80px);
-      opacity: 0;
+      @include opacity(0);
     }
 
     .projects-leave-to {
       transform: translatey(30px);
-      opacity: 0;
+      @include opacity(0);
     }
 
     .projects-leave-active {
@@ -213,7 +285,7 @@
     color: $white-color;
   }
   #footer {
-    background: rgba(0, 0, 0, 0.2);
+    background: $transparent-black;
     color: $white-color;
     .social {
       justify-content: center;
@@ -231,6 +303,9 @@
           color: $white-color;
           font-size: 1.75rem;
         }
+      }
+      &:hover a {
+        color: $main-color;
       }
     }
     .copyright {
