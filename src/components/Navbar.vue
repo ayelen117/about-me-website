@@ -4,7 +4,7 @@
       <b-nav-item href="#main" active>Home</b-nav-item>
       <b-nav-item href="#about">About</b-nav-item>
       <b-nav-item href="#portfolio">Portfolio</b-nav-item>
-      <b-nav-item href="#">Contact</b-nav-item>
+      <b-nav-item href="#footer">Contact</b-nav-item>
     </b-nav>
   </div>
 </template>

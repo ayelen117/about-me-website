@@ -9,6 +9,7 @@
   -moz-osx-font-smoothing: grayscale;
   text-align: center;
   color: $white-color;
+  scroll-behavior: smooth;
 
   .sticky {
     position: fixed;
@@ -55,7 +56,8 @@
     }
   }
   #navbar {
-    background: $transparent-black;
+    background: $light-grey-color;
+    z-index: 1;
     border-bottom: 5px solid $main-color !important;
     a {
       color: $white-color;
