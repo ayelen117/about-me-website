@@ -7,7 +7,7 @@
         <Languages />
       </div>
       <div id="skills" class="row">
-        <!-- todo: check structure -->
+        <!-- TODO: check structure -->
         <Skill
           v-for="skill in skills"
           :key="skill.subtitle"

@@ -15,15 +15,19 @@
 <script lang="ts">
 /*eslint @typescript-eslint/camelcase: "off"*/
 
+// TODO: Solve Ts errorss
 export default {
   name: "Main",
   mounted() {
+    //@ts-ignore
     this.$nextTick(() => {
+      //@ts-ignore
       this.initParticlesJS();
     });
   },
   methods: {
     initParticlesJS() {
+      //@ts-ignore
       window.particlesJS(
         "main",
         {

@@ -7,7 +7,9 @@
 </template>
 
 <script lang="ts">
-// todo: move to file
+// TODO: move to file
+// TODO: Solve Ts errors
+//@ts-ignore
 import JQuery from "jquery";
 const $ = JQuery;
 
@@ -19,11 +21,14 @@ $(document).ready(function() {
   const header = document.getElementById("navbar");
 
   // Get the offset position of the navbar
+  //@ts-ignore
   const sticky = header.offsetTop;
   function toStickNavbar() {
     if (window.pageYOffset > sticky) {
+      //@ts-ignore
       header.classList.add("sticky");
     } else {
+      //@ts-ignore
       header.classList.remove("sticky");
     }
   }
