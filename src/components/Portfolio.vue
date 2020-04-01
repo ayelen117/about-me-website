@@ -10,9 +10,7 @@
             class="filter col"
             v-bind:class="{ active: currentFilter === filter }"
             v-on:click="setFilter(filter)"
-          >
-            {{ filter }}
-          </div>
+          >{{ filter }}</div>
         </div>
       </div>
 
@@ -37,8 +35,7 @@
                   v-for="language in project.languages"
                   :key="language"
                   class="badge badge-pill badge-light"
-                  >{{ language }}</span
-                >
+                >{{ language }}</span>
               </div>
               <a class="btn" target="_blank" :href="project.url">Enter</a>
             </div>
@@ -140,10 +137,16 @@ export default {
           url: "https://github.com/multinexo/pyfiscalprinter"
         },
         {
-          title: "MongoDB vs. MySQL",
+          title: "MongoDB vs. MySQL (Thesis)",
           image: "tesis.png",
           languages: ["PHP", "MySQL", "MongoDB"],
           url: "https://github.com/ayelen117/mysql_vs_mongodb"
+        },
+        {
+          title: "Pirámide Informativa",
+          image: "piramideinformativa.png",
+          languages: ["Wordpress"],
+          url: "https://piramideinformativa.com/"
         }
         // {
         //   title: "telefe",

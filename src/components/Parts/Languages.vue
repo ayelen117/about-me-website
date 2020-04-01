@@ -12,9 +12,7 @@
           :aria-valuenow="language.progress"
           aria-valuemin="0"
           aria-valuemax="100"
-        >
-          {{ language.label }}
-        </div>
+        >{{ language.label }}</div>
       </div>
     </div>
   </div>
@@ -48,6 +46,11 @@ export default {
           label: "Advanced"
         },
         {
+          name: "NodeJs",
+          progress: 75,
+          label: "Intermediate"
+        },
+        {
           name: "C#",
           progress: 70,
           label: "Intermediate"
@@ -55,11 +58,6 @@ export default {
         {
           name: "Javascript",
           progress: 65,
-          label: "Intermediate"
-        },
-        {
-          name: "NodeJs",
-          progress: 60,
           label: "Intermediate"
         }
         // {
